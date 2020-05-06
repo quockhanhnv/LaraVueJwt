@@ -1,0 +1,11 @@
+{
+    "welcomeMsg": "Vue.jsアプリへようこそ",
+    "pluginsTxt": "インストールされているCLIプラグイン",
+    "guideTxt": "このプロジェクトを構成/カスタマイズする方法のガイドとレシピについては、{break} {action}",
+    "guideDocTxt": "vue-cliドキュメント",
+    "email": "メール",
+    "password": "パスワード",
+    "login": "ログインする",
+    "register": "登録"
+
+}

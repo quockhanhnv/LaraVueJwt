@@ -14,7 +14,7 @@
                     active-text-color="#ffd04b">
                     <el-menu-item index="0" :route="{name: 'login'}" v-show="!authenticated">
                         <i class="el-icon-menu"></i>
-                        <span>Login</span>
+                        <span>{{ $t('login') }}</span>
                     </el-menu-item>
 
                 </el-menu>
@@ -44,7 +44,7 @@
                             Dashboard
                         </el-breadcrumb-item>
                         <el-breadcrumb-item>
-                            <a href="/login">Login</a>
+                            <a href="/login">{{ $t('login')}}</a>
                         </el-breadcrumb-item>
                     </el-breadcrumb>
 
@@ -88,20 +88,24 @@
         font-family: Helvetica, Arial, sans-seril;
         color: #2c3e50;
     }
+
     .logo-container {
         display: flex;
         justify-content: center;
         height: 60px;
         background-color: rgb(84, 92, 100);
     }
+
     .el-aside {
         background-color: rgb(84, 92, 100);
         min-height: 800px;
     }
+
     .container {
         max-width: 1200px;
         margin: auto;
     }
+
     .menu-header {
         background-color: rgb(84, 92, 100);
         display: flex;
@@ -110,28 +114,34 @@
         height: 60px;
         align-items: center;
     }
+
     .el-header {
         padding-left: 0px;
         padding-right: 0px;
     }
+
     .acount-name {
         color: #FFF;
         cursor: pointer;
         padding-right: 20px;
     }
+
     .breadcrumb-container {
         padding: 10px;
         line-height: 30px;
         background: #f1f1f1;
     }
+
     .main-content {
         padding: 0px;
     }
+
     .toolbar, .pagination-table-view {
         display: flex;
         justify-content: flex-end;
         margin-bottom: 15px;
     }
+
     .pagination-table-view {
         margin-top: 15px;
     }
