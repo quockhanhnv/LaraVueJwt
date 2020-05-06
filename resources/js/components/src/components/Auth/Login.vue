@@ -19,7 +19,37 @@
     </div>
 </template>
 
-
+<script>
+    import { mapActions } from 'vuex' // để sử dụng 1 action từ 1 component khác
+    export default {
+        name: 'Login',
+        props: {},
+        data() {
+            return {
+                user: {
+                    email: '',
+                    password: '',
+                }
+            }
+        },
+        methods: {
+            ...mapActions({
+                signIn: 'auth/signIn' // gọi đến action onSubmit bên auth.js
+            }),
+            submit() { // từ component gọi đến action của 1 vuex sẽ dùng dispatch (trong hàm signIn của auth.js)
+                this.signIn(this.user).then(() => {
+                    this.$router.replace({
+                        name: 'dashboard'
+                    }).catch(() => {
+                        console.log('failed')
+                    })
+                });
+            }
+        },
+        mounted () {
+        }
+    }
+</script>
 
 <style>
     .login-container {
