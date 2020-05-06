@@ -16,6 +16,9 @@ import Dashboard from './components/HelloWorld.vue';
 
 import App from './App.vue'
 
+import  {i18n} from "./plugins/i18n";
+import FlagIcon from 'vue-flag-icon';
+
 axios.defaults.baseURL = 'http://localhost:8000/api'
 Vue.config.productionTip = false
 
@@ -23,6 +26,7 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI, {locale});
 Vue.use(VueRouter);
+Vue.use(FlagIcon);
 
 const routes = [
     {path: '/login', name: 'login', component: Login},
@@ -43,6 +47,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+    mode: 'history',
     routes
 })
 
@@ -51,6 +56,8 @@ store.dispatch('auth/attempt', localStorage.getItem('token')).then(() => {
     new Vue({
         router,
         store,
+        i18n,
         render: h => h(App),
     }).$mount('#app')
 })
+
